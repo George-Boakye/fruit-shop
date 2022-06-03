@@ -77,8 +77,8 @@ for (let button in buttons) {
   deleteButton[button].style.display = "none";
     //add an event listener to each button in the loop
   buttons[button].addEventListener("click", (e) => {
-    deleteButton[button].style.display = "inline-block";
     e.preventDefault();
+    deleteButton[button].style.display = "inline-block";
     counter += 1;
     cart.innerText = counter;
   });
@@ -89,8 +89,6 @@ for (let button in buttons) {
       counter -= 1;
       cart.innerText = counter;
     }
-    if (counter === 0) {
-      deleteButton[button].style.display = "none";
-    }
+    counter === 0 ?   deleteButton[button].style.display = "none" :  false ;
   });
 }
